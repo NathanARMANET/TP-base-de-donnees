@@ -102,3 +102,44 @@ where OWNER = 'CIRQUE';
 -- 10 elems
 -- Position permet de savoir dans quel ordre les colonne ont été appéllées lors
 -- d'une contrainte (tres utile pour les foreign key lors de la suppresion d'une table)
+
+-- 4
+-- cf partie2-4.png$
+
+-- 5
+-- les vues ne sont des résultats de requêtes que s'actualise automatiquement
+
+-- 6 Copie de la base de données de CIRQUE
+create table Personnel as (SELECT * FROM CIRQUE.Personnel);
+create table Numeros as (SELECT * FROM CIRQUE.Numeros);
+create table Utilisation as (SELECT * FROM CIRQUE.Utilisation);
+create table Accessoires as (SELECT * FROM CIRQUE.ACCESSOIRES);
+
+ --  7
+ -- les contraintes d'intégrité (primary and foreign key) n'ont pas été dupliquer
+ -- les attributs de type NOT NULL ont été dupliquer
+
+ -- 8
+ alter table ACCESSOIRES modify NOCAMION not null;
+-- erreur : ORA-01442: colonne à modifier en NOT NULL est déjà NOT NULL
+
+alter table ACCESSOIRES
+add check ( NOCAMION is not null );
+-- ca marche
+
+alter table ACCESSOIRES
+add check ( NOCAMION is not null );
+-- ca marche encore !!
+
+alter table ACCESSOIRES
+add check ( NORÂTELIER is not null );
+-- ca marche
+
+alter table ACCESSOIRES
+drop constraint nomDeLaContrainte;
+
+-- ccl :
+-- si contrainte sur un attribut : un seul appel (les autres seront des erreurs)
+-- si contrainte sur un attribut avec check : plusieurs appel possible
+
+-- 9
