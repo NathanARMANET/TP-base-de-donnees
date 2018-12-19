@@ -71,4 +71,17 @@ select * from ALL_OBJECTS;
 
 select distinct OBJECT_TYPE, count(*) as nbObject from ALL_OBJECTS
 group by OBJECT_TYPE;
---voir partie2-2.png
+--voir partie2-2-1.png
+
+select count(*) as nbTableSys from ALL_OBJECTS
+where OWNER = 'SYS';
+
+select distinct OBJECT_TYPE, count(*) as nbObject from ALL_OBJECTS
+where OWNER = 'SYS'
+group by OBJECT_TYPE;
+--voir partie2-2-2.png
+
+select distinct OBJECT_TYPE, count(*) as nbObject from ALL_OBJECTS
+where OWNER = 'CIRQUE'
+group by OBJECT_TYPE;
+--voir partie2-2-3.png
