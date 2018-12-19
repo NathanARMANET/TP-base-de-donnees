@@ -184,3 +184,14 @@ unique (ACCESSOIRE);
 -- 11
 -- impossible on ne pas passer ACCESSOIRES.ACCESSOIRE en unique key
 -- impossible car la clé n'est pas créé
+
+-- 12
+create table EXCEPTIONS
+(
+  ROW_ID     NUMBER generated as identity
+    constraint EXCEPTIONS_PK
+      primary key,
+  OWNER      VARCHAR2(30),
+  TABLE_NAME VARCHAR2(30),
+  CONSTRAINT VARCHAR2(30)
+)
