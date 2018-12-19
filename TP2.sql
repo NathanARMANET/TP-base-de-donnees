@@ -195,3 +195,19 @@ create table EXCEPTIONS
   TABLE_NAME VARCHAR2(30),
   CONSTRAINT VARCHAR2(30)
 )
+
+-- 13
+insert into ACCESSOIRES(accessoire, couleur, volume, norâtelier, nocamion) values ('étrier', NULL, NULL,0.2, NULL);
+-- impossible car on demande d'initialisé des attributs de paramettres NOT NULL à NULL
+-- ici c'est couleur
+-- Absurde
+
+insert into ACCESSOIRES(accessoire, couleur, volume, norâtelier, nocamion) values ('étrier', ' ', NULL, 0.2, NULL)
+-- impossible car on demande d'initialisé des attributs de paramettres NOT NULL à NULL
+-- ici c'est NOCAMION
+-- Absurde
+
+insert into ACCESSOIRES(accessoire, couleur, volume, norâtelier, nocamion) values ('étrier', ' ', NULL, 0.2, 0);
+-- ça marche
+
+-- création C4 : toujours impossible
