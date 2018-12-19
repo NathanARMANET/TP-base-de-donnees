@@ -100,3 +100,5 @@ where OWNER = 'CIRQUE';
 select * from ALL_CONS_COLUMNS
 where OWNER = 'CIRQUE';
 -- 10 elems
+-- Position permet de savoir dans quel ordre les colonne ont été appéllées lors
+-- d'une contrainte (tres utile pour les foreign key lors de la suppresion d'une table)
