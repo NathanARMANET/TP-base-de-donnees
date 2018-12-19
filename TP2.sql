@@ -170,7 +170,17 @@ select * from USER_IND_COLUMNS;
 -- affiche les clés primaire créées avec tout les details (quel attributs y sont)
 
 -- 10
+alter table UTILISATION
+add constraint fk_utilisation_accesoire
+foreign key (ACCESSOIRE) references ACCESSOIRES(ACCESSOIRE);
+-- impossible car ACCESSOIRES.ACCESSOIRE n'est ni une primary key ni
+-- une unique key
+
 alter table ACCESSOIRES
 add constraint uk_accessoires
 unique (ACCESSOIRE);
 -- impossible car des doublons existent deja
+
+-- 11
+-- impossible on ne pas passer ACCESSOIRES.ACCESSOIRE en unique key
+-- impossible car la clé n'est pas créé
