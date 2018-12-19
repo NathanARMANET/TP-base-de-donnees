@@ -85,3 +85,18 @@ select distinct OBJECT_TYPE, count(*) as nbObject from ALL_OBJECTS
 where OWNER = 'CIRQUE'
 group by OBJECT_TYPE;
 --voir partie2-2-3.png
+
+select * from ALL_TABLES
+where OWNER = 'CIRQUE';
+
+select * from ALL_VIEWS
+where OWNER = 'CIRQUE';
+
+-- 3
+select * from ALL_CONSTRAINTS
+where OWNER = 'CIRQUE';
+-- 8 elems
+
+select * from ALL_CONS_COLUMNS
+where OWNER = 'CIRQUE';
+-- 10 elems
