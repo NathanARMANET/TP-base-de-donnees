@@ -64,3 +64,11 @@ drop table ...
 select * from USER_TABLES;
 select * from USER_VIEWS;
 select * from USER_OBJECTS;
+
+-- 2
+select * from ALL_OBJECTS;
+-- 9180 objets accessibles
+
+select distinct OBJECT_TYPE, count(*) as nbObject from ALL_OBJECTS
+group by OBJECT_TYPE;
+--voir partie2-2.png
