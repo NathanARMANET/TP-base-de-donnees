@@ -143,3 +143,34 @@ drop constraint nomDeLaContrainte;
 -- si contrainte sur un attribut avec check : plusieurs appel possible
 
 -- 9
+alter table UTILISATION
+add constraint pk_utilisation
+PRIMARY KEY (TITREDENUMÉRO, UTILISATEUR, ACCESSOIRE);
+
+alter table UTILISATION
+add constraint fk_utilisateur
+foreign key (UTILISATEUR) references PERSONNEL(NOM);
+
+alter table UTILISATION
+add constraint fk_titreNum
+foreign key (TITREDENUMÉRO) references NUMEROS(TITREDENUMÉRO);
+
+alter table NUMEROS
+add constraint fk_responsable
+foreign key (RESPONSABLE) REFERENCES PERSONNEL (NOM);
+
+alter table NUMEROS
+add constraint pk_numero
+primary key (TITREDENUMÉRO);
+
+select * from USER_INDEXES;
+-- affiche les 3 clé primaire créées
+
+select * from USER_IND_COLUMNS;
+-- affiche les clés primaire créées avec tout les details (quel attributs y sont)
+
+-- 10
+alter table ACCESSOIRES
+add constraint uk_accessoires
+unique (ACCESSOIRE);
+-- impossible car des doublons existent deja
