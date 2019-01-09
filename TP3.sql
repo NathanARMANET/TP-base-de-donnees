@@ -18,8 +18,10 @@ insert into test_TP3(valeur) values(3);
 insert into test_TP3(valeur) values(6);
 insert into test_TP3(valeur) values(1);
 
-update TEST_TP3 set valeur = 7 where VALEUR = 3;
+update TEST_TP3 set valeur = 7 where VALEUR = 2;
 
-delete from TEST_TP3 where ID = 12;         
+delete from TEST_TP3 where ID = 12;
+
+ROLLBACK --à enlever toutes les valeurs
 
 -- 1. Plusieurs sessions sur un seul compte de BD et transactions coucurrentes
