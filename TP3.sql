@@ -48,4 +48,34 @@ insert into test_TP3(valeur) values(1);
 
 exit -- se deconnecte sans changer la table
 
+--Q.4
+insert into test_TP3(valeur) values(2);
+insert into test_TP3(valeur) values(3);
+insert into test_TP3(valeur) values(6);
+insert into test_TP3(valeur) values(1);
+
+-- fermeture brutal sessions
+ROLLBACK
+-- les valeur insérer sont supprimer
+
+-- Q.5
+insert into test_TP3(valeur) values(2);
+insert into test_TP3(valeur) values(3);
+insert into test_TP3(valeur) values(6);
+insert into test_TP3(valeur) values(1);
+
+alter table test_TP3
+add nouvelleC varcher(30);
+
+ROLLBACK; -- ne change rien
+
+-- Q.6
+-- transaction courrante : changement dans les données d'une table
+-- valider
+COMMIT;
+--ANNULER :
+ROLLBACK
+
+-- ne marche pas pour les modif de tableau
+
 -- 1. Plusieurs sessions sur un seul compte de BD et transactions coucurrentes
