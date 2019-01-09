@@ -18,8 +18,34 @@ insert into test_TP3(valeur) values(3);
 insert into test_TP3(valeur) values(6);
 insert into test_TP3(valeur) values(1);
 
-update TEST_TP3 set valeur = 7 where VALEUR = 3;
+update TEST_TP3 set valeur = 7 where VALEUR = 2;
 
-delete from TEST_TP3 where ID = 12;         
+delete from TEST_TP3 where ID = 12;
+
+ROLLBACK --à enlever toutes les valeurs
+
+--Q.2
+insert into test_TP3(valeur) values(2);
+insert into test_TP3(valeur) values(3);
+insert into test_TP3(valeur) values(6);
+insert into test_TP3(valeur) values(1);
+
+delete from test_TP3 where valeur = 6;
+
+commit ;
+
+ROLLBACK; -- rien ne change seul la valeur 6 est supprimer, les autres restes
+
+delete from test_TP3 where id in (select id from test_TP3);
+
+commit;
+
+--Q.3
+insert into test_TP3(valeur) values(2);
+insert into test_TP3(valeur) values(3);
+insert into test_TP3(valeur) values(6);
+insert into test_TP3(valeur) values(1);
+
+exit -- se deconnecte sans changer la table
 
 -- 1. Plusieurs sessions sur un seul compte de BD et transactions coucurrentes
