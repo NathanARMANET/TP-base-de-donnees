@@ -107,6 +107,17 @@ drop table test2_TP3;
 
 -- Q.5
 
--- 1ère insertion ok !
--- 2eme insertion probleme ! chargement infini
--- 
+-- USER A : 1ère insertion ok !
+-- USER B : 2eme insertion probleme ! chargement infini
+-- USER A : ROLLBACK ; supprime l'insertion
+-- USER B : 2eme insertion ok !
+
+-- Q.6
+
+
+-- Q.7
+
+-- exit permet de "COMMIT" les changement
+-- ces changement sont donc visible pour l'autre utilisateur
+
+-- Q.8
