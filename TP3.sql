@@ -217,3 +217,30 @@ FROM EMP
 WHERE EMP.ENAME <> 'BLAKE'
 START WITH EMP.MGR = (SELECT EMP.EMPNO FROM EMP WHERE EMP.ENAME = 'BLAKE')
 CONNECT BY EMP.MGR = prior EMP.EMPNO;
+
+-- 3. fonction PLSQL
+
+-- déclaration fonction
+SET SERVEROUTPUT ON;
+CREATE OR REPLACE FUNCTION getNbrEmp(p_noDept IN EMP.DeptNo%TYPE)
+RETURN EMP.DeptNo%TYPE
+IS
+    l_empNumber EMP.DeptNo%TYPE;
+BEGIN
+    SELECT COUNT (*) INTO l_empNumber
+    FROM EMP
+    WHERE EMP.DEPTNO = p_noDept;
+    RETURN l_empNumber;
+    
+    EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+    DBMS_OUTPUT.PUT_LINE('Pas d''employés trouvés pour ce département.');
+    RETURN null;
+END;
+
+
+-- test de la fonction
+SET SERVEROUTPUT ON
+BEGIN
+    DBMS_OUTPUT.PUT_LINE(getNbrEmp(20));
+END;
