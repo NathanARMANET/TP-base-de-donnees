@@ -269,3 +269,14 @@ WHERE DEPTNO = 40;
 
 
 ---- b. Seconde version avec un curseur
+
+DECLARE
+CURSOR c_noDep IS SELECT DEPTNO FROM DEPT;
+l_no DEPT.DeptNo%TYPE;
+BEGIN
+    FOR l_noDep IN c_noDep LOOP
+    
+--DBMS_OUTPUT.PUT_LINE(l_noDep.DEPTNO);
+       UPDATE DEPT SET NBEMPS = (SELECT COUNT (*) FROM EMP WHERE EMP.DEPTNO = l_noDep.DEPTNO);
+    END LOOP;
+END;
