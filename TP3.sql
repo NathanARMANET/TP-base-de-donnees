@@ -78,7 +78,7 @@ ROLLBACK
 
 -- ne marche pas pour les modif de tableau
 
--- 1. Plusieurs sessions sur un seul compte de BD et transactions coucurrentes
+-- 2. Plusieurs sessions sur un seul compte de BD et transactions coucurrentes
 
 -- Q.2
 insert into test_TP3(valeur) values(1);
@@ -106,3 +106,6 @@ drop table test2_TP3;
 --la suppreion marche
 
 -- Q.5
+
+-- pour un ordi ok
+-- pour l'autre probleme : chargement infini
