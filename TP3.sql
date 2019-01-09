@@ -246,3 +246,26 @@ BEGIN
 END;
 
 --4.
+
+ALTER TABLE Dept ADD NbEmps INT;
+
+---- a. Première version en appelant la fonction pour 4 cas diff
+
+UPDATE DEPT
+SET NBEMPS = getNbrEmp(10)
+WHERE DEPTNO = 10;
+
+UPDATE DEPT
+SET NBEMPS = getNbrEmp(20)
+WHERE DEPTNO = 20;
+
+UPDATE DEPT
+SET NBEMPS = getNbrEmp(30)
+WHERE DEPTNO = 30;
+
+UPDATE DEPT
+SET NBEMPS = getNbrEmp(40)
+WHERE DEPTNO = 40;
+
+
+---- b. Seconde version avec un curseur
