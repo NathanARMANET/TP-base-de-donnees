@@ -114,11 +114,19 @@ drop table test2_TP3;
 
 -- Q.6
 
+<<<<<<< HEAD
 -- exit permet de "COMMIT" les changement
 -- ces changement sont donc visible pour l'autre utilisateur
 
 -- Q.7
 
 
+=======
+
+-- Q.7
+
+-- exit permet de "COMMIT" les changement
+-- ces changement sont donc visible pour l'autre utilisateur
+>>>>>>> 638d86d6b2c2bb2a7525274c85cdd286ae9297df
 
 -- Q.8
