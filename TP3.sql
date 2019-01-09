@@ -136,3 +136,23 @@ rollback ;
 
 -- on peut voir les 2 tables mais seulement l'insertion effectué avant la
 -- création de la table est encore visible
+
+-- Q.9
+insert into TESTQ5_TP3(id, valeur) values (4, 29);
+
+select * from TESTQ5_TP3;
+
+drop table TESTQ8_TP3;
+
+rollback ;
+
+select * from TESTQ5_TP3;
+
+-- DROP TABLE effectue un "COMMIT"
+
+-- 3. Droits/privilèges entre deux comptes d’une même base de données
+
+-- Q.1
+select * from ALL_TABLES where OWNER = 'INI3A06';
+
+select * from INI3A06.TRANSACTION
