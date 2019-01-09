@@ -114,19 +114,25 @@ drop table test2_TP3;
 
 -- Q.6
 
-<<<<<<< HEAD
 -- exit permet de "COMMIT" les changement
 -- ces changement sont donc visible pour l'autre utilisateur
 
 -- Q.7
 
-
-=======
-
--- Q.7
-
--- exit permet de "COMMIT" les changement
--- ces changement sont donc visible pour l'autre utilisateur
->>>>>>> 638d86d6b2c2bb2a7525274c85cdd286ae9297df
+-- oui
 
 -- Q.8
+
+insert into TESTQ5_TP3(id, valeur) values (3, 9);
+
+create table testQ8_TP3 (
+  id int null,
+  valeur int null
+)
+
+insert into testQ8_TP3(id, valeur) values (1, 1);
+
+rollback ;
+
+-- on peut voir les 2 tables mais seulement l'insertion effectué avant la
+-- création de la table est encore visible
