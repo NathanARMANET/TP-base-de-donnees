@@ -156,3 +156,19 @@ select * from TESTQ5_TP3;
 select * from ALL_TABLES where OWNER = 'INI3A06';
 
 select * from INI3A06.TRANSACTION
+
+-- Q.2
+
+-- on peut voir les mises à jour seulement si l'autre groupe realise un "COMMIT"
+
+-- Q.3
+
+-- insertion impossible (on à pas les droits)
+
+-- Q.4
+
+-- insertion ok !
+
+-- Q.5
+select * from INI3A06.TRANSACTION T
+join INI3A03.TESTQ5_TP3 I on T.ID_TRANSACTION = I.ID;
