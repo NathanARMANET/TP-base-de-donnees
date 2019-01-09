@@ -107,5 +107,6 @@ drop table test2_TP3;
 
 -- Q.5
 
--- pour un ordi ok
--- pour l'autre probleme : chargement infini
+-- 1ère insertion ok !
+-- 2eme insertion probleme ! chargement infini
+-- 
