@@ -79,3 +79,30 @@ ROLLBACK
 -- ne marche pas pour les modif de tableau
 
 -- 1. Plusieurs sessions sur un seul compte de BD et transactions coucurrentes
+
+-- Q.2
+insert into test_TP3(valeur) values(1);
+insert into test_TP3(valeur) values(2);
+insert into test_TP3(valeur) values(3);
+
+-- on voit juste les transactions effectuer à partir de la fenètre
+
+-- Q.3
+create table test2_TP3
+(
+	id int generated as identity
+		constraint test_TP3_pk
+			primary key,
+	valeur int not null
+);
+
+-- on voit les modif sur la table init de l'utilisateur qui a créer la nouvelle table
+-- on voit la nouvelle table
+-- on voit juste les transactions effectuer à partir de la fenètre
+
+
+-- Q.4
+drop table test2_TP3;
+--la suppreion marche
+
+-- Q.5
